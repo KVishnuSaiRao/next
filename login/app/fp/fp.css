@@ -1,0 +1,27 @@
+.one1{
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background:orange;
+    margin: auto;
+    border: 2px solid black;
+    margin:32%;
+    margin-top: 10%;
+}
+.one1 h1{
+    padding-left: 160px;
+}
+.one1 h2{
+    padding-left: 40px;
+    color: rgb(128, 35, 214);
+}
+.two2{
+    padding-left: 80px;
+}
+.three3{
+    padding-left: 160px;
+}
+.three3 input{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 90px;
+}

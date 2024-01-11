@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    // "types": ["nookies"],
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "ES2020",
+    "forceConsistentCasingInFileNames": true,
+    // "moduleResolution" : "Bundler" ,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "moduleResolution": "Node",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+
+  "include": ["next-env.d.ts", "src/**/*.ts", "src/**/*.tsx", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/images/page.jsx", "app/Sopen/page.tsx", "app/fp/page.jsx"],
+  "exclude": ["node_modules"]
+}
