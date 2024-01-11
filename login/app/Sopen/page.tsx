@@ -1,22 +1,45 @@
 "use client";
 import React from "react";
+import { useEffect } from "react";
 import "./So.css";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import logo from "../images/ConstructNLogo.png";
+import logo from "../images/cnlogo.svg";
+import home from "../images/home.png"
 import { getToken, deleteCookie } from "../components/cookies";
+import Navbar from "../navbar/page";
 export default function Open() {
-  const router = useRouter(); 
+  const router = useRouter();
+  useEffect(() => {
+    const token = getToken();
 
+    if (!token) {
+      router.push("/");
+    }
+  }, [router]);
+  const handleLogout = () => {
+    // Delete the cookie and redirect to the login page
+    deleteCookie();
+    router.push("/");
+  };
   return (
-    <main>
+    <div>
+      <Image src={logo} alt="" />
+      
+      <Navbar />
+      <div className="kv">
+      <main className="main1">
+        <h1>After all, we are visual creatures </h1>
+        <p>
+          Our passion is construction, digital and AI. In this world of the
+          future, we believe it is your passion too. Therefore, lets come
+          together to make the Construction industry more visual,
+          high-performance, and efficient
+        </p>
 
-      <div> <button onClick={()=>router.push('/')}>Logout</button></div>
-      <div className="full">
-        <div>
-          <Image src={logo} alt="" width={320}></Image>
-        </div>
+      </main>
+      <Image src={home} alt="" />
       </div>
-    </main>
+    </div>
   );
 }
