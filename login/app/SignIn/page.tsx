@@ -25,7 +25,6 @@ export default function Open() {
   return (
     <div className="home">
       <Image src={logo} alt="" />
-      
       <Navbar />
       <div className="kv">
       <main className="main1">

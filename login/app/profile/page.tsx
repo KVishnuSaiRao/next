@@ -1,6 +1,7 @@
 // pages/UserProfile.js
 "use client";
 import { useEffect, useState } from "react";
+import logo from "../images/cnlogo.svg";
 import axios from "axios";
 import "./profile.css"
 import profile from "../images/profile.png"
@@ -61,16 +62,19 @@ const UserProfile = () => {
   };
   return (
     <div className="over">
+      <Image src={logo} alt="" />
         <Navbar />
     <div className="pro">
-    <Image  src={profile} alt="" />
+    <div className="profile-image-container">
+          <Image src={profile} alt="" width={200} height={200} /> 
+        </div>
       <h2 className="kvs">User Profile</h2>
       {userData ? (
         <div className="info">
-          <p>First Name:{userData.firstName}</p>
-          <p>Last Name: {userData.lastName}</p>
-          <p>Email: {userData.email}</p>
-          <p>Status:{userData.status}</p>
+          <h5>First Name:{userData.firstName}</h5>
+          <h5>Last Name: {userData.lastName}</h5>
+          <h5>Email: {userData.email}</h5>
+          <h5>Status:{userData.status}</h5>
         </div>
       ) : (
         <h3>Loading...</h3>
