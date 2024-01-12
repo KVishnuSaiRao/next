@@ -1,6 +1,4 @@
 import { parseCookies,setCookie,destroyCookie } from "nookies";
-
-
 const COOKIE_NAME = 'authData';
 
 export const storeTokensInCookie = (token: string, refreshToken: string) => {
@@ -23,13 +21,12 @@ export const printStoredTokens = () => {
   }
 };
 
-export const deleteCookie = () => {
+export const removeCookie = () => {
   destroyCookie(null, COOKIE_NAME, { path: '/' });
   console.log('Cookie deleted.');
 };
 
 export const getToken = () => {
   const authData = parseCookies()[COOKIE_NAME];
-
   return authData ? JSON.parse(authData).token : null;
 };

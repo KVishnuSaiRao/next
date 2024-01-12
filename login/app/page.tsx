@@ -56,7 +56,7 @@ export default function Home() {
 
         if (user && user.result.email === email) {
           console.log("User info:", user);
-          router.push("Sopen");
+          router.push("SignIn");
         } else {
           setLoginError(true);
         }

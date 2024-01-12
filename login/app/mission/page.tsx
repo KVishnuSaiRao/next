@@ -7,7 +7,7 @@ import mission from "../images/mission.svg";
 import Navbar from "../navbar/page";
 export default function Open() {
   return (
-    <div>
+    <div className="miss">
       <Image src={logo} alt="" />
       <Navbar />
       <div className="kv">

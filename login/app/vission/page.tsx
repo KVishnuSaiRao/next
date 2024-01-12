@@ -7,7 +7,7 @@ import vission from "../images/vision.svg";
 import Navbar from "../navbar/page";
 export default function Open() {
   return (
-    <div>
+    <div className="viss">
       <Image src={logo} alt="" />
       <Navbar />
       <div className="kv">

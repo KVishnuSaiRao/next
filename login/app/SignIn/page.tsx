@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import logo from "../images/cnlogo.svg";
 import home from "../images/home.png"
-import { getToken, deleteCookie } from "../components/cookies";
+import { getToken, removeCookie } from "../components/cookies";
 import Navbar from "../navbar/page";
 export default function Open() {
   const router = useRouter();
@@ -19,11 +19,11 @@ export default function Open() {
   }, [router]);
   const handleLogout = () => {
     // Delete the cookie and redirect to the login page
-    deleteCookie();
+    removeCookie();
     router.push("/");
   };
   return (
-    <div>
+    <div className="home">
       <Image src={logo} alt="" />
       
       <Navbar />

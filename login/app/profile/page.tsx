@@ -3,8 +3,10 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./profile.css"
+import profile from "../images/profile.png"
+import Image from "next/image";
 import Navbar from "../navbar/page";
-import { getToken, deleteCookie } from "../components/cookies";
+import { getToken, removeCookie } from "../components/cookies";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 interface UserProfileData {
@@ -54,17 +56,15 @@ const UserProfile = () => {
 
   const handleLogout = () => {
     // Delete the cookie and redirect to the login page
-    deleteCookie();
+    removeCookie();
     router.push("/");
   };
-  <Navbar />
-
   return (
     <div className="over">
         <Navbar />
     <div className="pro">
-      
-      <h1 className="kvs">User Profile</h1>
+    <Image  src={profile} alt="" />
+      <h2 className="kvs">User Profile</h2>
       {userData ? (
         <div className="info">
           <p>First Name:{userData.firstName}</p>
@@ -73,7 +73,7 @@ const UserProfile = () => {
           <p>Status:{userData.status}</p>
         </div>
       ) : (
-        <p>Loading...</p>
+        <h3>Loading...</h3>
       )}
 
       <span>

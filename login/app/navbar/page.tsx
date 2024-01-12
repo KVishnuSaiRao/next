@@ -1,7 +1,7 @@
 // components/Navbar.js
 import React from "react";
 import Link from "next/link";
-import { getToken, deleteCookie } from "../components/cookies";
+import { getToken, removeCookie } from "../components/cookies";
 import { useRouter } from "next/navigation";
 
 import "./navB.css";
@@ -10,13 +10,13 @@ const Navbar = () => {
 
   const handleLogout = () => {
     // Delete the cookie and redirect to the login page
-    deleteCookie();
+    removeCookie();
     router.push("/");
   };
   return (
     <div className="navBar">
       <nav>
-        <Link href="/Sopen">Home</Link>
+        <Link href="/SignIn">Home</Link>
         <Link href="/vission">Vission</Link>
         <Link href="/profile">Profile</Link>
         <Link href="/mission">Mission</Link>
