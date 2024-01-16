@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import bg from './images/bgimg.svg';
 import { Inter } from 'next/font/google'
 import './globals.css'
 

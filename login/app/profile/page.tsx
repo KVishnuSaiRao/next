@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 import logo from "../images/cnlogo.svg";
 import axios from "axios";
-import "./profile.css"
-import profile from "../images/profile.png"
+import "./profile.css";
+import profile from "../images/profile.png";
 import Image from "next/image";
 import Navbar from "../navbar/page";
 import { getToken, removeCookie } from "../components/cookies";
@@ -63,29 +63,29 @@ const UserProfile = () => {
   return (
     <div className="over">
       <Image src={logo} alt="" />
-        <Navbar />
-    <div className="pro">
-    <div className="profile-image-container">
-          <Image src={profile} alt="" width={200} height={200} /> 
+      <Navbar />
+      <div className="pro">
+        <div className="profile-image-container">
+          <Image src={profile} alt="" width={200} height={200} />
         </div>
-      <h2 className="kvs">User Profile</h2>
-      {userData ? (
-        <div className="info">
-          <h5>First Name:{userData.firstName}</h5>
-          <h5>Last Name: {userData.lastName}</h5>
-          <h5>Email: {userData.email}</h5>
-          <h5>Status:{userData.status}</h5>
-        </div>
-      ) : (
-        <h3>Loading...</h3>
-      )}
+        <h2 className="kvs">User Profile</h2>
+        {userData ? (
+          <div className="info">
+            <h5>First Name:{userData.firstName}</h5>
+            <h5>Last Name: {userData.lastName}</h5>
+            <h5>Email: {userData.email}</h5>
+            <h5>Status:{userData.status}</h5>
+          </div>
+        ) : (
+          <h3>Loading...</h3>
+        )}
 
-      <span>
-        <Link href={"/"} onClick={handleLogout}>
-          LogOut
-        </Link>
-      </span>
-    </div>
+        <span>
+          <Link href={"/"} onClick={handleLogout}>
+            LogOut
+          </Link>
+        </span>
+      </div>
     </div>
   );
 };
