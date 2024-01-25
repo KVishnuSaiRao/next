@@ -1,9 +1,393 @@
-.pag{
+.Card {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between; 
 }
-.Pback{
+
+.Pback {
     background-color: rgb(255, 255, 255);
+}
+
+.icons {
+    display: flex;
+    flex-direction: row;
+    padding-right: 50px;
+    padding-top: 30px;
+    cursor: pointer;
+}
+
+.icons .C {
+    border: 2px solid rgb(243, 161, 8);
+    padding: 9px;
+
+}
+
+.icons .L {
+    border: 2px solid rgb(243, 161, 8);
+    padding: 5px;
+}
+
+.head {
+    padding-left: 25px;
+    padding-top: 30px;
+}
+
+.icons .List {
+    border: 2px solid rgb(243, 161, 8);
+    padding: 5px;
+    background-color: orange;
+}
+
+.icons .Grid {
+    border: 2px solid rgb(243, 161, 8);
+    padding: 9px;
+    background-color: orange;
+}
+
+/* _________________________________________________________________________________________ */
+
+/* Your CSS file or style block */
+
+.ListView {
+    padding: 15px;
+    width: 100%;
+    /* margin: 20px 0; */
+}
+
+.Table {
+    border-collapse: collapse;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.Table tr:hover {
+    background-color: #f1740d14;
+    /* Change background color on hover */
+}
+
+.Table thead {
+    /* background-color: #f78c00c3; */
+    color: black;
+    /* Header text color */
+    font-size: small;
+    justify-content: space-between;
+
+}
+
+.Table td {
+    padding: 12px;
+    text-align: left;
+    padding: 17px;
+}
+
+.Table th {
+    padding: 17px;
+    text-align: left;
+    border-bottom: 1px solid #ff9e02;
+}
+
+.Table tr {
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+    font-weight: 300;
+    font-family: "&quot;", Arial, sans-serif;
+    color: #04011c;
+}
+
+.capCol {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    width: 300px;
+    justify-content: space-between;
+
+}
+
+.capEel {
+    width: 30px;
+    display: flex;
+    text-align: left;
+    flex-direction: row;
+
+}
+
+.Hname {
+    width: 300px;
+    text-align: left;
+}
+
+.Hcaptures {
+    width: 350px;
+}
+
+.Husers {
+    width: 100px;
+}
+
+.Hlast{
+    cursor: pointer;
+}
+.userEl {
+    display: flex;
+    flex-direction: row;
+}
+
+.td::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 100%;
+    height: 0.3px;
+    background-color: #000;
+}
+
+.Table td:last-child {
+    position: relative;
+    /* Position the container for the menu icon */
+}
+
+.menuIcon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: none;
+    /* Initially hide the menu icon */
+}
+
+
+.Table tr:hover .menuIcon {
+    display: block;
+    /* Show the menu icon when the row is hovered */
+}
+
+
+/* Add these styles to your existing CSS file or use inline styles */
+
+/* Add the following styles for the message box */
+.messageBox {
+    position: absolute;
+    width: 250px;
+    height: 210px;
+    top: 20%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    /* line-height: 2; */
+    font-size: 16px;
+    margin-top: 130px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.352);
+    z-index: 1;
+}
+
+.menuIcon.showMenu {
+    display: block;
+}
+
+.MB {
+    padding-left: 30px;
+}
+
+.messageBox h1 {
+    margin: 0;
+    padding: 5px 0;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.messageBox h1:hover {
+    background-color: rgba(128, 128, 128, 0.196);
+    padding: 2px;
+    padding-left: 25px;
+    border-radius: 2px;
+}
+
+/* _______________________________ShimmerCard________________________________________________ */
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 0.3px solid rgb(243, 161, 8);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 1px 8px 9px rgb(223, 103, 4);
+    transition: transform 0.3s ease-in-out;
+    width: 300px;
+    height: 408px;
+    margin: 18px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.captures {
+    display: flex;
+    flex-direction: row;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.content.back {
+    transform: rotateY(180deg);
+}
+
+.imageContainer {
+    position: relative;
+    height: 75px;
+}
+
+.content {
+    padding: 16px;
+}
+
+@keyframes fadeInCard {
+    from {
+        transform: rotateY(0deg);
+    }
+
+    to {
+        transform: rotateY(180deg);
+    }
+}
+
+.ima {
+    position: relative;
+    padding-left: 270px;
+    padding-top: 10px;
+}
+
+
+.projectDetails {
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 0px;
+    transform: translateX(-50%);
+    background-color: rgba(8, 7, 7, 0.712);
+    padding: 3px;
+    font-size: 12px;
+    border-radius: 4px;
+    color: white;
+    display: none;
+}
+
+.ima:hover .projectDetails {
+    display: block;
+}
+
+.captureDetails {
+    line-height: 2;
+}
+
+.captureDetails h1 {
+    font-size: 20px;
+}
+
+.captureDetails h3 {
+    font-size: 15px;
+    font-style: italic;
+}
+
+.captureDetails::after {
+    content: "";
+    display: block;
+    margin-top: 5px;
+}
+
+.imageContainer::after {
+    content: "";
+    display: block;
+    border-bottom: 1px solid #000;
+    margin-top: 5px;
+}
+
+.conclusion {
+    display: flex;
+    flex-direction: row;
+    padding-top: 10px;
+}
+
+.conclusion .captures:not(:last-child)::after {
+    content: '';
+    display: block;
+    width: 1px;
+    background-color: #000;
+    margin-right: 10px;
+}
+
+.Imba {
+    font-size: 22px;
+}
+
+.BF {
+    display: flex;
+    flex-direction: column;
+    border: 0.3px solid orange;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.opt {
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.opt::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 100%;
+    height: 0.3px;
+    background-color: #000;
+}
+
+.opt:hover {
+    background-color: #f0f0f0;
+}
+
+
+.shimmer {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(58, 52, 52, 0.098);
+    border: 0.3px solid black;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px;
+    height: 408px;
+    margin: 18px;
+    position: relative;
+  }
+  
+  .shimmer:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent 0%, rgba(105, 98, 98, 0.854) 50%, transparent 100%);
+    animation: shimmer 3s infinite linear;
+  }
+  
+  @keyframes shimmer {
+    to {
+     left: 100%;
+    }
+  }
+  
+  .shimmer-cards{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
